@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/circularCardView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:foreground="@drawable/stroke"
+        app:cardBackgroundColor="@color/purple_700"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/retailerImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/register" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/retailerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:maxLines="1"
+        android:text="Sasto Kirana Pasal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/circularCardView"
+        app:layout_constraintTop_toTopOf="@+id/circularCardView" />
+
+    <TextView
+        android:id="@+id/retailerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="🏪 Gadhawa - 07, Kanchhi Gaun"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/retailerName"
+        app:layout_constraintTop_toBottomOf="@+id/retailerName" />
+
+    <TextView
+        android:id="@+id/retailerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="monospace"
+        android:text="☏ +9779809808701"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/retailerAddress"
+        app:layout_constraintTop_toBottomOf="@+id/retailerAddress" />
+</androidx.constraintlayout.widget.ConstraintLayout>
