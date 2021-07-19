@@ -99,6 +99,15 @@
                 android:text="Phone: +9779847967132"
                 android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/emailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Email: example@gmail.com"
+                android:textSize="14sp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
