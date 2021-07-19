@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/storeAddress"
@@ -85,7 +85,7 @@
                 android:id="@+id/storeOwner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="Owner: TNC Rounder"
                 android:textSize="14sp" />
@@ -94,7 +94,7 @@
                 android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="Phone: +9779847967132"
                 android:textSize="14sp" />
