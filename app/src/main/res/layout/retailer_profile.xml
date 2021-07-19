@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--  Profile image CardView  -->
     <androidx.cardview.widget.CardView
         android:id="@+id/circularCardView"
         android:layout_width="100dp"
@@ -27,25 +29,43 @@
 
     <TextView
         android:id="@+id/storeName"
-        android:layout_width="wrap_content"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
+        android:ellipsize="middle"
         android:fontFamily="sans-serif-condensed"
-        android:text="Sasto Kirana Passal"
+        android:singleLine="true"
+        android:text="Sasto, Ramro, Hamro, Kirana and Madira Kirana Passal"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/circularCardView"
         app:layout_constraintStart_toStartOf="@+id/circularCardView"
         app:layout_constraintTop_toBottomOf="@+id/circularCardView" />
 
+
+    <!--  Store Details CardView  -->
+    <TextView
+        android:id="@+id/panNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="PAN: 34751274"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/storeName"
+        app:layout_constraintStart_toStartOf="@+id/storeName"
+        app:layout_constraintTop_toBottomOf="@+id/storeName" />
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/storeDetailsCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/storeName">
+        app:layout_constraintTop_toBottomOf="@+id/panNumber">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,24 +74,24 @@
             android:padding="12dp">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/storeAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-light"
-                android:text="Owner: TNC Rounder"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="Address: Gadhawa - 07, Kanchhi Gaun"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/storeOwner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Owner: TNC Rounder"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -79,15 +99,110 @@
                 android:text="Phone: +9779847967132"
                 android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:text="PAN No.: 34751274"
-                android:textSize="14sp" />
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--  Store Financial Stats Card View  -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/storeStatsCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@id/storeDetailsCardView"
+        app:layout_constraintStart_toStartOf="@id/storeDetailsCardView"
+        app:layout_constraintTop_toBottomOf="@id/storeDetailsCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/duePayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="monospace"
+                android:text="Rs.20000"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/duePaymentLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:text="Payment Due"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/duePayment"
+                app:layout_constraintStart_toStartOf="@+id/duePayment"
+                app:layout_constraintTop_toBottomOf="@+id/duePayment" />
+
+
+            <TextView
+                android:id="@+id/noOfOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="monospace"
+                android:text="56"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/duePaymentLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/duePaymentLabel" />
+
+            <TextView
+                android:id="@+id/noOfOrderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:text="No. of Orders"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/noOfOrder"
+                app:layout_constraintStart_toStartOf="@+id/noOfOrder"
+                app:layout_constraintTop_toBottomOf="@+id/noOfOrder" />
+
+
+            <TextView
+                android:id="@+id/totalVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="monospace"
+                android:text="Rs.450000"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/duePaymentLabel"
+                app:layout_constraintTop_toBottomOf="@+id/duePaymentLabel" />
+
+            <TextView
+                android:id="@+id/totalVolumeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:text="Total Volume"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/totalVolume"
+                app:layout_constraintStart_toStartOf="@+id/totalVolume"
+                app:layout_constraintTop_toBottomOf="@+id/totalVolume" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
